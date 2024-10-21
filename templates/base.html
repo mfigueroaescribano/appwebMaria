@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Bases de Datos MariaDB</title>
+</head>
+<body>
+    <h1>Gestor de Bases de Datos MariaDB</h1>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('login') }}">Inicio de Sesión</a></li>
+            {% if db_config.user and db_config.password and db_config.host %}
+                <li><a href="{{ url_for('list_databases') }}">Bases de Datos</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

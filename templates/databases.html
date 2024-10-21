@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bases de Datos</title>
+</head>
+<body>
+    <h1>Bases de Datos</h1>
+    <ul>
+        {% for database in databases %}
+            <li>
+                <a href="{{ url_for('list_tables', db_name=database[0]) }}">{{ database[0] }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+</body>
+</html>
